@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --maroon: #6B0F1A;
+  --maroon-deep: #4A0A12;
+  --maroon-vivid: #851222;
+  --gold: #C9A84C;
+  --cream: #FAF8F5;
+  --white: #FFFFFF;
+  --ink: #161215;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #FAF8F5;
+  color: #161215;
+  font-family: var(--font-space), "Space Grotesk", -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #FAF8F5;
+  color: #161215;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100dvh;
+}
+
+/* Luxury Selection */
+::selection {
+  background: rgba(107, 15, 26, 0.18);
+  color: #6B0F1A;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #6B0F1A;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #851222;
+}
+
+/* Luxury Glow & Text Utilities */
+.maroon-glow {
+  text-shadow: 0 0 25px rgba(107, 15, 26, 0.25);
+}
+
+.gold-glow {
+  text-shadow: 0 0 20px rgba(201, 168, 76, 0.35);
+}
+
+.card-luxury {
+  background: #FFFFFF;
+  border: 1px solid rgba(107, 15, 26, 0.12);
+  box-shadow: 0 10px 40px -10px rgba(107, 15, 26, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+}
+
+.card-luxury:hover {
+  border-color: rgba(107, 15, 26, 0.35);
+  box-shadow: 0 20px 50px -10px rgba(107, 15, 26, 0.12), 0 0 25px rgba(201, 168, 76, 0.15);
+}
+
+/* Breathing Atmosphere */
+@keyframes ambientDrift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.65;
+  }
+  50% {
+    transform: translate(20px, -15px) scale(1.05);
+    opacity: 0.85;
+  }
+}
+
+.animate-ambient {
+  animation: ambientDrift 14s ease-in-out infinite;
+}
+
+/* Pulse animation for under construction */
+@keyframes pulseMaroon {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(107, 15, 26, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(107, 15, 26, 0);
+  }
+}
+
+.pulse-badge {
+  animation: pulseMaroon 2s infinite;
+}
